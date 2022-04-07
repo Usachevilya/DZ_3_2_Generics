@@ -78,5 +78,6 @@ fun main() {
     println(notes)
     restoreComment(2)
     println(notes)
+    get()
 }
 

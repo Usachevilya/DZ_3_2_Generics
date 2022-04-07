@@ -59,40 +59,43 @@ fun editComment(commentsEdit: Comments) {
 }
 
 fun get(): List<Notes> {
-    var result = emptyList<Notes>()
+    var res = emptyList<Notes>()
     for (i in notes.indices) {
-        result = listOf(notes[i])
+        res += notes[i]
     }
-    return result
+    return res
 }
 
-fun getById(id: Int): Notes? {
+fun getById(id: Int): List<Notes> {
+    var res = emptyList<Notes>()
     for (i in notes.indices) {
         if (notes[i].noteId == id) {
-            return notes[i]
+            res += notes[i]
         }
     }
-    val resultError: Notes? = null
-    return resultError
+    return res
 }
 
-fun getComments(noteId: Int): List<Comments>? {
+fun getComments(noteId: Int): List<Comments> {
+    var res = emptyList<Comments>()
     for (i in notes.indices) {
         if (notes[i].noteId == noteId) {
-            return notes[i].comments
+            res += notes[i].comments
         }
     }
-    return null
+    return res
 }
 
-fun getFriendsNotes(privacyView: String): Notes? {
+fun getFriendsNotes(privacyView: String): List<Notes> {
+    var res = emptyList<Notes>()
     for (i in notes.indices) {
         if (notes[i].privacyView == privacyView) {
-            return notes[i]
+            res += notes[i]
         }
     }
-    return null
+    return res
 }
+
 fun restoreComment(commentId: Int) {
     for (i in comentDelete.indices) {
         if (comentDelete[i].commentId == commentId) {

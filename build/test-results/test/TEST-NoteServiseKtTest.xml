@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NoteServiseKtTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-07T06:20:13" hostname="0001050-HP" time="0.236">
+<testsuite name="NoteServiseKtTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-04-07T09:02:37" hostname="0001050-HP" time="0.063">
   <properties/>
-  <testcase name="deleteTest" classname="NoteServiseKtTest" time="0.236"/>
+  <testcase name="deleteCommentTest" classname="NoteServiseKtTest" time="0.058"/>
+  <testcase name="getCommentsTest" classname="NoteServiseKtTest" time="0.003"/>
+  <testcase name="createCommentsTest" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="getByIdTEst" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="notesAddTest" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="editCommentTest" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="getTest" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="restoreComment" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="editTest" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="getFriendsNotesTest" classname="NoteServiseKtTest" time="0.0"/>
+  <testcase name="deleteTest" classname="NoteServiseKtTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

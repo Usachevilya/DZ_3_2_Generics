@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DZ_3_2_Generics</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.kt</span></div><h1>Main.kt</h1><pre class="source lang-java linenums"><span class="nc" id="L1">class Main {}</span>
+
+fun main() {
+<span class="nc" id="L4">    var comments2 = Comments(</span>
+<span class="nc" id="L5">        commentId = 2,</span>
+<span class="nc" id="L6">        noteId = 1,</span>
+<span class="nc" id="L7">        replyTo = 1,</span>
+<span class="nc" id="L8">        message = &quot;add comment2&quot;</span>
+    )
+<span class="nc" id="L10">    var comments1 = Comments(</span>
+<span class="nc" id="L11">        commentId = 1,</span>
+<span class="nc" id="L12">        noteId = 1,</span>
+<span class="nc" id="L13">        replyTo = 1,</span>
+<span class="nc" id="L14">        message = &quot;add comment&quot;</span>
+    )
+<span class="nc" id="L16">    var comments3 = Comments(</span>
+<span class="nc" id="L17">        commentId = 3,</span>
+<span class="nc" id="L18">        noteId = 1,</span>
+<span class="nc" id="L19">        replyTo = 1,</span>
+<span class="nc" id="L20">        message = &quot;add comment3&quot;</span>
+    )
+<span class="nc" id="L22">    var commentsEdit = Comments(</span>
+<span class="nc" id="L23">        commentId = 3,</span>
+<span class="nc" id="L24">        noteId = 3,</span>
+<span class="nc" id="L25">        replyTo = 1,</span>
+<span class="nc" id="L26">        message = &quot;add commentEdit&quot;</span>
+    )
+<span class="nc" id="L28">    var note1 = Notes(</span>
+<span class="nc" id="L29">        noteId = 1,</span>
+<span class="nc" id="L30">        title = &quot;Р—Р°РіРѕР»РѕРІРѕРє1&quot;,</span>
+<span class="nc" id="L31">        text = &quot;РўРµРєСЃС‚ Р·Р°РјРµС‚РєРё1&quot;,</span>
+<span class="nc" id="L32">        privacy = 1,</span>
+<span class="nc" id="L33">        commentPrivacy = 1,</span>
+<span class="nc" id="L34">        privacyView = &quot;Frends&quot;,</span>
+<span class="nc" id="L35">        privacyComment = &quot;Frends&quot;,</span>
+<span class="nc" id="L36">        comments = mutableListOf(comments1)</span>
+    )
+
+<span class="nc" id="L39">    var note2 = Notes(</span>
+<span class="nc" id="L40">        noteId = 2,</span>
+<span class="nc" id="L41">        title = &quot;Р—Р°РіРѕР»РѕРІРѕРє1&quot;,</span>
+<span class="nc" id="L42">        text = &quot;РўРµРєСЃС‚ Р·Р°РјРµС‚РєРё1&quot;,</span>
+<span class="nc" id="L43">        privacy = 1,</span>
+<span class="nc" id="L44">        commentPrivacy = 1,</span>
+<span class="nc" id="L45">        privacyView = &quot;Frends&quot;,</span>
+<span class="nc" id="L46">        privacyComment = &quot;Frends&quot;,</span>
+<span class="nc" id="L47">        comments = mutableListOf(comments2)</span>
+    )
+<span class="nc" id="L49">    var note3 = Notes(</span>
+<span class="nc" id="L50">        noteId = 3,</span>
+<span class="nc" id="L51">        title = &quot;Р—Р°РіРѕР»РѕРІРѕРє1&quot;,</span>
+<span class="nc" id="L52">        text = &quot;РўРµРєСЃС‚ Р·Р°РјРµС‚РєРё1&quot;,</span>
+<span class="nc" id="L53">        privacy = 1,</span>
+<span class="nc" id="L54">        commentPrivacy = 1,</span>
+<span class="nc" id="L55">        privacyView = &quot;Frends&quot;,</span>
+<span class="nc" id="L56">        privacyComment = &quot;Frends&quot;,</span>
+<span class="nc" id="L57">        comments = mutableListOf(comments1)</span>
+    )
+<span class="nc" id="L59">    var noteEdit = Notes(</span>
+<span class="nc" id="L60">        noteId = 3,</span>
+<span class="nc" id="L61">        title = &quot;Р—Р°РіРѕР»РѕРІРѕРє1&quot;,</span>
+<span class="nc" id="L62">        text = &quot;РўРµРєСЃС‚ Р·Р°РјРµС‚РєРёEdit&quot;,</span>
+<span class="nc" id="L63">        privacy = 1,</span>
+<span class="nc" id="L64">        commentPrivacy = 1,</span>
+<span class="nc" id="L65">        privacyView = &quot;Frends&quot;,</span>
+<span class="nc" id="L66">        privacyComment = &quot;Frends&quot;,</span>
+<span class="nc" id="L67">        comments = mutableListOf(comments1)</span>
+    )
+<span class="nc" id="L69">    notesAdd(note1)</span>
+<span class="nc" id="L70">    println(notes)</span>
+<span class="nc" id="L71">    notesAdd(note2)</span>
+<span class="nc" id="L72">    println(notes)</span>
+<span class="nc" id="L73">    createComments(comments2)</span>
+<span class="nc" id="L74">    println(notes)</span>
+<span class="nc" id="L75">    createComments(comments3)</span>
+<span class="nc" id="L76">    println(notes)</span>
+<span class="nc" id="L77">    deleteComment(comments2)</span>
+<span class="nc" id="L78">    println(notes)</span>
+<span class="nc" id="L79">    restoreComment(2)</span>
+<span class="nc" id="L80">    println(notes)</span>
+<span class="nc" id="L81">    get()</span>
+<span class="nc" id="L82">}</span>
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

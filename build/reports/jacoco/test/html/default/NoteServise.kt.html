@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NoteServise.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DZ_3_2_Generics</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">NoteServise.kt</span></div><h1>NoteServise.kt</h1><pre class="source lang-java linenums"><span class="nc" id="L1">class NoteServise {</span>
+}
+
+<span class="pc" id="L4">var notes = mutableListOf&lt;Notes&gt;()</span>
+<span class="pc" id="L5">var comentDelete = mutableListOf&lt;Comments&gt;()</span>
+
+
+fun notesAdd(note: Notes) {
+<span class="fc" id="L9">    notes += note</span>
+<span class="fc" id="L10">}</span>
+
+fun createComments(comments: Comments) {
+<span class="fc bfc" id="L13" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (comments.noteId == notes[i].noteId) {</span>
+<span class="fc" id="L15">            notes[i].comments += comments</span>
+        }
+    }
+<span class="fc" id="L18">}</span>
+
+fun delete(noteId: Int) {
+<span class="fc bfc" id="L21" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        if (notes[i].noteId == noteId) {</span>
+<span class="nc" id="L23">            notes.remove(notes[i])</span>
+<span class="nc" id="L24">            break</span>
+        }
+    }
+<span class="fc" id="L27">}</span>
+
+fun deleteComment(commentsD: Comments) {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        for (j in notes[i].comments.indices) {</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">            if (notes[i].comments[j].commentId == commentsD.commentId) {</span>
+<span class="fc" id="L33">                notes[i].comments -= commentsD</span>
+<span class="fc" id="L34">                comentDelete += commentsD</span>
+<span class="fc" id="L35">                break</span>
+            }
+        }
+    }
+<span class="fc" id="L39">}</span>
+
+fun edit(note: Notes) {
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">    for (i in notes.indices) {</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (notes[i].noteId == note.noteId) {</span>
+<span class="fc" id="L44">            notes[i] = note</span>
+<span class="fc" id="L45">            break</span>
+        }
+    }
+<span class="fc" id="L48">}</span>
+
+fun editComment(commentsEdit: Comments) {
+<span class="fc bfc" id="L51" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (j in notes[i].comments.indices) {</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            if (notes[i].comments[j].commentId == commentsEdit.commentId) {</span>
+<span class="fc" id="L54">                notes[i].comments[j].message = commentsEdit.message</span>
+<span class="fc" id="L55">                break</span>
+            }
+        }
+    }
+<span class="fc" id="L59">}</span>
+
+fun get(): List&lt;Notes&gt; {
+<span class="fc" id="L62">    var res = emptyList&lt;Notes&gt;()</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="fc" id="L64">        res += notes[i]</span>
+    }
+<span class="fc" id="L66">    return res</span>
+}
+
+fun getById(id: Int): List&lt;Notes&gt; {
+<span class="fc" id="L70">    var res = emptyList&lt;Notes&gt;()</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if (notes[i].noteId == id) {</span>
+<span class="fc" id="L73">            res += notes[i]</span>
+        }
+    }
+<span class="fc" id="L76">    return res</span>
+}
+
+fun getComments(noteId: Int): List&lt;Comments&gt; {
+<span class="fc" id="L80">    var res = emptyList&lt;Comments&gt;()</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        if (notes[i].noteId == noteId) {</span>
+<span class="fc" id="L83">            res += notes[i].comments</span>
+        }
+    }
+<span class="fc" id="L86">    return res</span>
+}
+
+fun getFriendsNotes(privacyView: String): List&lt;Notes&gt; {
+<span class="fc" id="L90">    var res = emptyList&lt;Notes&gt;()</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">    for (i in notes.indices) {</span>
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if (notes[i].privacyView == privacyView) {</span>
+<span class="fc" id="L93">            res += notes[i]</span>
+        }
+    }
+<span class="fc" id="L96">    return res</span>
+}
+
+fun restoreComment(commentId: Int) {
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">    for (i in comentDelete.indices) {</span>
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">        if (comentDelete[i].commentId == commentId) {</span>
+<span class="fc" id="L102">            createComments(comentDelete.removeAt(i))</span>
+<span class="fc" id="L103">            break</span>
+        }
+    }
+<span class="fc" id="L106">}</span>
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
